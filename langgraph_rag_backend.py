@@ -18,7 +18,7 @@ from langgraph.graph import START, StateGraph
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode, tools_condition
 import requests
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_google_genai import ChatGoogleGenerativeAI,GoogleGenerativeAIEmbeddings
 
 load_dotenv()
 
@@ -33,7 +33,8 @@ llm = HuggingFaceEndpoint(
 
 model =ChatGoogleGenerativeAI(model='gemini-3.7-flash')
 
-embeddings = HuggingFaceEmbeddings(model='sentence-transformers/all-MiniLM-L6-v2')
+# embeddings = HuggingFaceEmbeddings(model='sentence-transformers/all-MiniLM-L6-v2')
+embeddings = GoogleGenerativeAIEmbeddings(model='gemini-embedding-2')
 print('models initialized...')
 
 # -------------------
