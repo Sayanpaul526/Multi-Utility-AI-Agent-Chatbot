@@ -75,7 +75,7 @@ def ingest_pdf(file_bytes: bytes, thread_id: str, filename: Optional[str] = None
 
         vector_store = FAISS.from_documents(chunks, embeddings)
         retriever = vector_store.as_retriever(
-            search_type="MMR", search_kwargs={"k": 4}
+            search_type="similarity", search_kwargs={"k": 4}
         )
 
         _THREAD_RETRIEVERS[str(thread_id)] = retriever
