@@ -1,16 +1,17 @@
-import streamlit as st
-
 import uuid
 
+import streamlit as st
 from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
 
-
+# FIXED: Changed 'from test' to your actual backend file name.
+# If your file is named differently, change 'langgraph_rag_backend' below to match it exactly.
 from langgraph_rag_backend import (
     chatbot,
     ingest_pdf,
     retrieve_all_threads,
     thread_document_metadata,
 )
+
 
 # =========================== Utilities ===========================
 def generate_thread_id():
