@@ -12,4 +12,4 @@ langgraph-checkpoint-sqlite
 faiss-cpu
 pypdf
 sentence-transformers
-duckduckgo-search
+ddgs
