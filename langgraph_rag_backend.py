@@ -140,9 +140,10 @@ def get_stock_price(symbol: str) -> dict:
     Fetch latest stock price for a given symbol (e.g. 'AAPL', 'TSLA') 
     using Alpha Vantage with API key in the URL.
     """
+    apikey = os.getenv('ALPHAVANTAGE_API_KEY')
     url = (
         "https://www.alphavantage.co/query"
-        f"?function=GLOBAL_QUOTE&symbol={symbol}&apikey=C9PE94QUEW9VWGFM"
+        f"?function=GLOBAL_QUOTE&symbol={symbol}&apikey={apikey}"
     )
     r = requests.get(url)
     return r.json()
