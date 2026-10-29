@@ -244,9 +244,9 @@ def thread_has_document(thread_id: str) -> bool:
 def thread_document_metadata(thread_id: str) -> dict:
     return _THREAD_METADATA.get(str(thread_id), {})
 
-from langchain_core.messages import HumanMessage
-out = chatbot.invoke(
-    {'messages':[HumanMessage(content='what is 2*3 ?')]},
-    config={'configurable': {'thread_id': 'default-thread'}}
-)
-print(out['messages'][-1].content)
+# from langchain_core.messages import HumanMessage
+# out = chatbot.invoke(
+#     {'messages':[HumanMessage(content='what is 2*3 ?')]},
+#     config={'configurable': {'thread_id': 'default-thread'}}
+# )
+# print(out['messages'][-1].content)
