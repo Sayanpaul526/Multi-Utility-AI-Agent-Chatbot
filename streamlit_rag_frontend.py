@@ -1,7 +1,9 @@
+import streamlit as st
+
 import uuid
 
-import streamlit as st
 from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
+
 
 from langgraph_rag_backend import (
     chatbot,
@@ -9,7 +11,6 @@ from langgraph_rag_backend import (
     retrieve_all_threads,
     thread_document_metadata,
 )
-
 
 # =========================== Utilities ===========================
 def generate_thread_id():
